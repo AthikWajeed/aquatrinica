@@ -1,0 +1,41 @@
+div.container-fluid.text-center{
+  background-color: black;
+  text-align:center;
+  padding-left: 100px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  grid-gap: 5px;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  display: block;
+  width: 70%;
+  height: 100%;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.3);
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
